@@ -24,7 +24,16 @@ namespace WindowsFormsApp1
             {
                 SetProcessWorkingSetSize(System.Diagnostics.Process.GetCurrentProcess().Handle, -1, -1);
             }
-        }  
+        }
+
+        /// <summary>
+        /// 数据库初始化
+        /// </summary>
+        public static void InitDB()
+        {
+            DBHelp.CreateTables.Create<Model.Schedule>();
+
+        }
 
         public static void OpenNewForm(Form newform)
         {
@@ -34,7 +43,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        public static List<string> RepeatType()
+        public static List<string> RepeatUnit()
         {
             List<string> list = new List<string>();
             list.Add("days");

@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
 
         private void Schedule_Load(object sender, EventArgs e)
         {
-            combTypes.DataSource = Common.RepeatType();
+            combUnit.DataSource = Common.RepeatUnit();
         }
 
         private void txtCustom_KeyPress(object sender, KeyPressEventArgs e)

@@ -39,11 +39,13 @@
             this.rbtnYear = new System.Windows.Forms.RadioButton();
             this.rbtnCustom = new System.Windows.Forms.RadioButton();
             this.panelCustom = new System.Windows.Forms.Panel();
-            this.txtCustom = new System.Windows.Forms.TextBox();
+            this.combUnit = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.combTypes = new System.Windows.Forms.ComboBox();
+            this.txtCustom = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.rbtnNeverRepeat = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panelCustom.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 125);
+            this.label2.Location = new System.Drawing.Point(11, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
@@ -86,13 +88,13 @@
             this.textBox2.Location = new System.Drawing.Point(58, 59);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 60);
+            this.textBox2.Size = new System.Drawing.Size(198, 49);
             this.textBox2.TabIndex = 4;
             // 
             // rbtnDay
             // 
             this.rbtnDay.AutoSize = true;
-            this.rbtnDay.Location = new System.Drawing.Point(58, 147);
+            this.rbtnDay.Location = new System.Drawing.Point(58, 180);
             this.rbtnDay.Name = "rbtnDay";
             this.rbtnDay.Size = new System.Drawing.Size(77, 16);
             this.rbtnDay.TabIndex = 6;
@@ -103,7 +105,7 @@
             // rbtnWeek
             // 
             this.rbtnWeek.AutoSize = true;
-            this.rbtnWeek.Location = new System.Drawing.Point(58, 169);
+            this.rbtnWeek.Location = new System.Drawing.Point(58, 202);
             this.rbtnWeek.Name = "rbtnWeek";
             this.rbtnWeek.Size = new System.Drawing.Size(83, 16);
             this.rbtnWeek.TabIndex = 7;
@@ -114,7 +116,7 @@
             // rbtnMonth
             // 
             this.rbtnMonth.AutoSize = true;
-            this.rbtnMonth.Location = new System.Drawing.Point(58, 191);
+            this.rbtnMonth.Location = new System.Drawing.Point(58, 224);
             this.rbtnMonth.Name = "rbtnMonth";
             this.rbtnMonth.Size = new System.Drawing.Size(89, 16);
             this.rbtnMonth.TabIndex = 8;
@@ -125,7 +127,7 @@
             // rbtnYear
             // 
             this.rbtnYear.AutoSize = true;
-            this.rbtnYear.Location = new System.Drawing.Point(58, 213);
+            this.rbtnYear.Location = new System.Drawing.Point(58, 246);
             this.rbtnYear.Name = "rbtnYear";
             this.rbtnYear.Size = new System.Drawing.Size(83, 16);
             this.rbtnYear.TabIndex = 9;
@@ -136,7 +138,7 @@
             // rbtnCustom
             // 
             this.rbtnCustom.AutoSize = true;
-            this.rbtnCustom.Location = new System.Drawing.Point(58, 235);
+            this.rbtnCustom.Location = new System.Drawing.Point(58, 268);
             this.rbtnCustom.Name = "rbtnCustom";
             this.rbtnCustom.Size = new System.Drawing.Size(77, 16);
             this.rbtnCustom.TabIndex = 10;
@@ -147,22 +149,23 @@
             // 
             // panelCustom
             // 
-            this.panelCustom.Controls.Add(this.combTypes);
+            this.panelCustom.Controls.Add(this.combUnit);
             this.panelCustom.Controls.Add(this.label4);
             this.panelCustom.Controls.Add(this.txtCustom);
-            this.panelCustom.Location = new System.Drawing.Point(58, 258);
+            this.panelCustom.Location = new System.Drawing.Point(58, 291);
             this.panelCustom.Name = "panelCustom";
             this.panelCustom.Size = new System.Drawing.Size(198, 46);
             this.panelCustom.TabIndex = 11;
             this.panelCustom.Visible = false;
             // 
-            // txtCustom
+            // combUnit
             // 
-            this.txtCustom.Location = new System.Drawing.Point(44, 11);
-            this.txtCustom.Name = "txtCustom";
-            this.txtCustom.Size = new System.Drawing.Size(62, 21);
-            this.txtCustom.TabIndex = 12;
-            this.txtCustom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustom_KeyPress);
+            this.combUnit.BackColor = System.Drawing.Color.White;
+            this.combUnit.FormattingEnabled = true;
+            this.combUnit.Location = new System.Drawing.Point(112, 11);
+            this.combUnit.Name = "combUnit";
+            this.combUnit.Size = new System.Drawing.Size(83, 20);
+            this.combUnit.TabIndex = 13;
             // 
             // label4
             // 
@@ -173,18 +176,17 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Every";
             // 
-            // combTypes
+            // txtCustom
             // 
-            this.combTypes.BackColor = System.Drawing.Color.White;
-            this.combTypes.FormattingEnabled = true;
-            this.combTypes.Location = new System.Drawing.Point(112, 11);
-            this.combTypes.Name = "combTypes";
-            this.combTypes.Size = new System.Drawing.Size(83, 20);
-            this.combTypes.TabIndex = 13;
+            this.txtCustom.Location = new System.Drawing.Point(44, 11);
+            this.txtCustom.Name = "txtCustom";
+            this.txtCustom.Size = new System.Drawing.Size(62, 21);
+            this.txtCustom.TabIndex = 12;
+            this.txtCustom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustom_KeyPress);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(13, 327);
+            this.btnAdd.Location = new System.Drawing.Point(13, 362);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(243, 30);
             this.btnAdd.TabIndex = 12;
@@ -195,7 +197,7 @@
             // rbtnNeverRepeat
             // 
             this.rbtnNeverRepeat.AutoSize = true;
-            this.rbtnNeverRepeat.Location = new System.Drawing.Point(58, 125);
+            this.rbtnNeverRepeat.Location = new System.Drawing.Point(58, 158);
             this.rbtnNeverRepeat.Name = "rbtnNeverRepeat";
             this.rbtnNeverRepeat.Size = new System.Drawing.Size(95, 16);
             this.rbtnNeverRepeat.TabIndex = 13;
@@ -203,11 +205,31 @@
             this.rbtnNeverRepeat.Text = "Nerer Repeat";
             this.rbtnNeverRepeat.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 129);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 12);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Start";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(58, 123);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(198, 21);
+            this.dateTimePicker1.TabIndex = 15;
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 374);
+            this.ClientSize = new System.Drawing.Size(271, 412);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.rbtnNeverRepeat);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panelCustom);
@@ -246,8 +268,10 @@
         private System.Windows.Forms.Panel panelCustom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCustom;
-        private System.Windows.Forms.ComboBox combTypes;
+        private System.Windows.Forms.ComboBox combUnit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.RadioButton rbtnNeverRepeat;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
