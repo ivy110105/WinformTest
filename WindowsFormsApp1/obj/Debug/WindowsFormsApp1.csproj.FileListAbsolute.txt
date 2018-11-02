@@ -1,0 +1,16 @@
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.IndexForm.resources
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Schedule.resources
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SchedulesForm.resources
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SettingsForm.resources
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Record.resources
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RecordsForm.resources
+E:\Projects\SelfProjects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ToDoList.resources
