@@ -14,6 +14,7 @@ namespace WindowsFormsApp1.Model
         [DataFieldAttribute("Note", "500")]
         public string Note { get; set; }
         public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         [DataFieldAttribute("RepeatType", "100")]
         public string RepeatType { get; set; }
         public int RepeatNum { get; set; }

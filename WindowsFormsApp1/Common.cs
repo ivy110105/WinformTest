@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.DAL;
 
 namespace WindowsFormsApp1
 {
@@ -32,7 +30,13 @@ namespace WindowsFormsApp1
         public static void InitDB()
         {
             DBHelp.CreateTables.Create<Model.Schedule>();
-
+            var model = new Model.Schedule();
+            model.Name = "Test";
+            model.EndDate = Convert.ToDateTime("1900-01-01 00:00:00");
+            model.CreatedOn = DateTime.Now;
+            model.StartDate = DateTime.Now;
+            model.ModifedOn = DateTime.Now;
+            DB.Insert<Model.Schedule>(model);
         }
 
         public static void OpenNewForm(Form newform)
@@ -43,6 +47,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// 重复的单位
+        /// 例如：Repeat Every 4 days
+        /// </summary>
+        /// <returns></returns>
         public static List<string> RepeatUnit()
         {
             List<string> list = new List<string>();

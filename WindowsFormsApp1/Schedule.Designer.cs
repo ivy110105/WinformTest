@@ -39,6 +39,10 @@
             this.rbtnYear = new System.Windows.Forms.RadioButton();
             this.rbtnCustom = new System.Windows.Forms.RadioButton();
             this.panelCustom = new System.Windows.Forms.Panel();
+            this.txtFrequencyNum = new System.Windows.Forms.TextBox();
+            this.combFrequencyUnit = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTimes = new System.Windows.Forms.TextBox();
             this.combUnit = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCustom = new System.Windows.Forms.TextBox();
@@ -46,6 +50,8 @@
             this.rbtnNeverRepeat = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panelCustom.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,28 +155,68 @@
             // 
             // panelCustom
             // 
+            this.panelCustom.Controls.Add(this.radioButton2);
+            this.panelCustom.Controls.Add(this.radioButton1);
+            this.panelCustom.Controls.Add(this.txtFrequencyNum);
+            this.panelCustom.Controls.Add(this.combFrequencyUnit);
+            this.panelCustom.Controls.Add(this.label6);
+            this.panelCustom.Controls.Add(this.txtTimes);
             this.panelCustom.Controls.Add(this.combUnit);
             this.panelCustom.Controls.Add(this.label4);
             this.panelCustom.Controls.Add(this.txtCustom);
-            this.panelCustom.Location = new System.Drawing.Point(58, 291);
+            this.panelCustom.Location = new System.Drawing.Point(55, 283);
             this.panelCustom.Name = "panelCustom";
-            this.panelCustom.Size = new System.Drawing.Size(198, 46);
+            this.panelCustom.Size = new System.Drawing.Size(201, 65);
             this.panelCustom.TabIndex = 11;
             this.panelCustom.Visible = false;
+            // 
+            // txtFrequencyNum
+            // 
+            this.txtFrequencyNum.Location = new System.Drawing.Point(104, 37);
+            this.txtFrequencyNum.Name = "txtFrequencyNum";
+            this.txtFrequencyNum.Size = new System.Drawing.Size(20, 21);
+            this.txtFrequencyNum.TabIndex = 17;
+            this.txtFrequencyNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
+            // 
+            // combFrequencyUnit
+            // 
+            this.combFrequencyUnit.BackColor = System.Drawing.Color.White;
+            this.combFrequencyUnit.FormattingEnabled = true;
+            this.combFrequencyUnit.Location = new System.Drawing.Point(130, 37);
+            this.combFrequencyUnit.Name = "combFrequencyUnit";
+            this.combFrequencyUnit.Size = new System.Drawing.Size(71, 20);
+            this.combFrequencyUnit.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(63, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 12);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Times";
+            // 
+            // txtTimes
+            // 
+            this.txtTimes.Location = new System.Drawing.Point(39, 37);
+            this.txtTimes.Name = "txtTimes";
+            this.txtTimes.Size = new System.Drawing.Size(20, 21);
+            this.txtTimes.TabIndex = 14;
+            this.txtTimes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             // 
             // combUnit
             // 
             this.combUnit.BackColor = System.Drawing.Color.White;
             this.combUnit.FormattingEnabled = true;
-            this.combUnit.Location = new System.Drawing.Point(112, 11);
+            this.combUnit.Location = new System.Drawing.Point(119, 11);
             this.combUnit.Name = "combUnit";
-            this.combUnit.Size = new System.Drawing.Size(83, 20);
+            this.combUnit.Size = new System.Drawing.Size(82, 20);
             this.combUnit.TabIndex = 13;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 15);
+            this.label4.Location = new System.Drawing.Point(39, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 12);
             this.label4.TabIndex = 12;
@@ -178,15 +224,15 @@
             // 
             // txtCustom
             // 
-            this.txtCustom.Location = new System.Drawing.Point(44, 11);
+            this.txtCustom.Location = new System.Drawing.Point(80, 11);
             this.txtCustom.Name = "txtCustom";
-            this.txtCustom.Size = new System.Drawing.Size(62, 21);
+            this.txtCustom.Size = new System.Drawing.Size(33, 21);
             this.txtCustom.TabIndex = 12;
-            this.txtCustom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustom_KeyPress);
+            this.txtCustom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(13, 362);
+            this.btnAdd.Location = new System.Drawing.Point(13, 370);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(243, 30);
             this.btnAdd.TabIndex = 12;
@@ -223,11 +269,31 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(198, 21);
             this.dateTimePicker1.TabIndex = 15;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(19, 14);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 16;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(19, 41);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 412);
+            this.ClientSize = new System.Drawing.Size(270, 412);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rbtnNeverRepeat);
@@ -273,5 +339,11 @@
         private System.Windows.Forms.RadioButton rbtnNeverRepeat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox combFrequencyUnit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTimes;
+        private System.Windows.Forms.TextBox txtFrequencyNum;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

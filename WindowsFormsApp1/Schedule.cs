@@ -37,9 +37,10 @@ namespace WindowsFormsApp1
         private void Schedule_Load(object sender, EventArgs e)
         {
             combUnit.DataSource = Common.RepeatUnit();
+            combFrequencyUnit.DataSource = Common.RepeatUnit();
         }
 
-        private void txtCustom_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != '\b')//这是允许输入退格键
             {
