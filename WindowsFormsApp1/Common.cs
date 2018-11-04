@@ -30,13 +30,6 @@ namespace WindowsFormsApp1
         public static void InitDB()
         {
             DBHelp.CreateTables.Create<Model.Schedule>();
-            var model = new Model.Schedule();
-            model.Name = "Test";
-            model.EndDate = Convert.ToDateTime("1900-01-01 00:00:00");
-            model.CreatedOn = DateTime.Now;
-            model.StartDate = DateTime.Now;
-            model.ModifedOn = DateTime.Now;
-            DB.Insert<Model.Schedule>(model);
         }
 
         public static void OpenNewForm(Form newform)

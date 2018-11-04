@@ -8,6 +8,7 @@ namespace WindowsFormsApp1
     {
         public IndexForm()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
         }
 

@@ -50,8 +50,8 @@ namespace WindowsFormsApp1.DAL
 
             var sql = string.Format(insertsql, type.Name,sb.ToString().TrimEnd(','));
 
-            SQLHelper.ExecuteNonQuery(sql, param);
-            return true;
+            var result=SQLHelper.ExecuteNonQuery(sql, param);
+            return result > 0;
         }
 
         public static bool Update<T>(Guid id,T model) where T : class, new()
