@@ -14,9 +14,8 @@ namespace WindowsFormsApp1
 
         private void Schedule_Load(object sender, EventArgs e)
         {
-            combUnit.DataSource = Common.RepeatUnit();
             combFrequencyUnit.DataSource = Common.RepeatUnit();
-            rbtnNeverRepeat.Checked = true;
+            rbtnOnlyOnce.Checked = true;
         }
 
         private void rbtnCustom_CheckedChanged(object sender, EventArgs e)
@@ -33,18 +32,17 @@ namespace WindowsFormsApp1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int num = 0;string unit = string.Empty;
-            var type= getRepeatType(ref num, ref unit);
-            int days = getDays(num, unit);
+            int times = 0; int cyclenum = 0;string cycleunit = string.Empty;
+            var type= getFrequencyInfo(ref times,ref cyclenum, ref cycleunit);
             var model = new Model.Schedule();
             model.Name = txtName.Text;
             model.Note = txtNote.Text;
-            model.RepeatType = type;
+            model.FrequencyType = type;
             model.StartDate = Convert.ToDateTime(dtpickStart.Text);
-            model.EndDate = Convert.ToDateTime("1900-01-01 00:00:00");
-            model.RepeatNum = num;
-            model.RepeatUnit = unit;
-            model.RepeatDays = days;
+            //model.EndDate = Convert.ToDateTime("1900-01-01 00:00:00");
+            model.FrequencyTimes = times;
+            model.FrequencyCycleNum = cyclenum;
+            model.FrequencyCycleUnit = cycleunit;
             model.CreatedOn = DateTime.Now;
             model.CreatedBy = "";
             model.ModifedOn = DateTime.Now;
@@ -66,7 +64,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private string getRepeatType(ref int num,ref string unit)
+        private string getFrequencyInfo(ref int times,ref int cyclenum, ref string cycleunit)
         {
             var str = string.Empty;
             foreach (Control ctrl in this.Controls)
@@ -79,28 +77,9 @@ namespace WindowsFormsApp1
                         switch (((RadioButton)ctrl).Text)
                         {
                             case "Custom...":
-                                foreach (Control subctrl in panelCustom.Controls)
-                                {
-                                    if (subctrl is RadioButton)
-                                    {
-                                        if (((RadioButton)subctrl).Checked)
-                                        {
-                                            switch (((RadioButton)subctrl).Name)
-                                            {
-                                                case "rbtnCustomRepeat":
-                                                    num = Convert.ToInt32(txtCustom.Text);
-                                                    unit = combUnit.Text;
-                                                    str = "Every " + num.ToString() + " " + unit;                                                    
-                                                    break;
-                                                case "rbtnCustomFrequency":
-                                                    num = Convert.ToInt32(txtFrequencyNum.Text);
-                                                    unit = combFrequencyUnit.Text;
-                                                    str = txtTimes.Text + " Times " + txtFrequencyNum.Text + " " + combFrequencyUnit.Text;
-                                                    break;
-                                            }
-                                        }
-                                    }
-                                }
+                                cyclenum = Convert.ToInt32(txtFrequencyNum.Text);
+                                cycleunit = combFrequencyUnit.Text;
+                                str = txtTimes.Text + " Times " + txtFrequencyNum.Text + " " + combFrequencyUnit.Text;
                                 break;
                             default:
                                 str= ((RadioButton)ctrl).Text;
@@ -111,19 +90,6 @@ namespace WindowsFormsApp1
                 }
             }
             return str;
-        }
-
-        private int getDays(int num, string unit)
-        {
-            int days = 0;
-            switch (unit)
-            {
-                case "days": days = num; break;
-                case "weeks": days= num * 7; break;
-                case "months": days = num * 30; break;
-                case "years": days = num * 365; break;
-            }
-            return days;
         }
     }
 }

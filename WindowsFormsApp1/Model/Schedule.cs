@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Model
 {
@@ -14,12 +10,24 @@ namespace WindowsFormsApp1.Model
         [DataFieldAttribute("Note", "500")]
         public string Note { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        [DataFieldAttribute("RepeatType", "100")]
-        public string RepeatType { get; set; }
-        public int RepeatNum { get; set; }
+        public DateTime? EndDate { get; set; }
+        /// <summary>
+        /// 频率类型
+        /// </summary>
+        [DataFieldAttribute("RepeatType", "100")]        
+        public string FrequencyType { get; set; }
+        /// <summary>
+        /// 频次（次数）
+        /// </summary>
+        public int FrequencyTimes { get; set; }
+        /// <summary>
+        /// 频率周期数（eg：每三天）
+        /// </summary>
+        public int FrequencyCycleNum { get; set; }
+        /// <summary>
+        /// 频率周期单位
+        /// </summary>
         [DataFieldAttribute("RepeatUnit", "30")]
-        public string RepeatUnit { get; set; }
-        public int RepeatDays { get; set; }
+        public string FrequencyCycleUnit { get; set; }
     }
 }

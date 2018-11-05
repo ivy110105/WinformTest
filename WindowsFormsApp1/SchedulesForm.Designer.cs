@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SchedulesForm));
             this.label1 = new System.Windows.Forms.Label();
             this.picAdd = new System.Windows.Forms.PictureBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 30);
+            this.label1.Location = new System.Drawing.Point(28, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 0;
@@ -46,7 +47,7 @@
             // picAdd
             // 
             this.picAdd.Image = ((System.Drawing.Image)(resources.GetObject("picAdd.Image")));
-            this.picAdd.Location = new System.Drawing.Point(101, 30);
+            this.picAdd.Location = new System.Drawing.Point(101, 19);
             this.picAdd.Name = "picAdd";
             this.picAdd.Size = new System.Drawing.Size(14, 12);
             this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -54,15 +55,26 @@
             this.picAdd.TabStop = false;
             this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(30, 37);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(302, 204);
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
             // SchedulesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 253);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.picAdd);
             this.Controls.Add(this.label1);
             this.Name = "SchedulesForm";
             this.Text = "SchedulesForm";
+            this.Load += new System.EventHandler(this.SchedulesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -73,5 +85,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picAdd;
+        private System.Windows.Forms.ListView listView1;
     }
 }

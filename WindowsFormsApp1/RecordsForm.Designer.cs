@@ -32,13 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.picAdd = new System.Windows.Forms.PictureBox();
-            this.dgvToDoList = new System.Windows.Forms.DataGridView();
-            this.dgvOtherRecord = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lvToDoList = new System.Windows.Forms.ListView();
+            this.listView2 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvToDoList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOtherRecord)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,9 +44,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ToDoList";
+            this.label1.Text = "To Do List";
             // 
             // label2
             // 
@@ -70,24 +68,6 @@
             this.picAdd.TabStop = false;
             this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
             // 
-            // dgvToDoList
-            // 
-            this.dgvToDoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvToDoList.Location = new System.Drawing.Point(24, 80);
-            this.dgvToDoList.Name = "dgvToDoList";
-            this.dgvToDoList.RowTemplate.Height = 23;
-            this.dgvToDoList.Size = new System.Drawing.Size(279, 150);
-            this.dgvToDoList.TabIndex = 5;
-            // 
-            // dgvOtherRecord
-            // 
-            this.dgvOtherRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOtherRecord.Location = new System.Drawing.Point(24, 269);
-            this.dgvOtherRecord.Name = "dgvOtherRecord";
-            this.dgvOtherRecord.RowTemplate.Height = 23;
-            this.dgvOtherRecord.Size = new System.Drawing.Size(279, 150);
-            this.dgvOtherRecord.TabIndex = 6;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -107,23 +87,40 @@
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.Value = new System.DateTime(2018, 11, 2, 0, 0, 0, 0);
             // 
+            // lvToDoList
+            // 
+            this.lvToDoList.Location = new System.Drawing.Point(24, 70);
+            this.lvToDoList.Name = "lvToDoList";
+            this.lvToDoList.Size = new System.Drawing.Size(279, 154);
+            this.lvToDoList.TabIndex = 9;
+            this.lvToDoList.UseCompatibleStateImageBehavior = false;
+            this.lvToDoList.View = System.Windows.Forms.View.Details;
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(24, 257);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(279, 184);
+            this.listView2.TabIndex = 10;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
             // RecordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 463);
+            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.lvToDoList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dgvOtherRecord);
-            this.Controls.Add(this.dgvToDoList);
             this.Controls.Add(this.picAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RecordsForm";
             this.Text = "RecordsForm";
+            this.Load += new System.EventHandler(this.RecordsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvToDoList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOtherRecord)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,9 +131,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox picAdd;
-        private System.Windows.Forms.DataGridView dgvToDoList;
-        private System.Windows.Forms.DataGridView dgvOtherRecord;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ListView lvToDoList;
+        private System.Windows.Forms.ListView listView2;
     }
 }

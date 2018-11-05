@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1.DBHelp
 {
     public class CreateTables
     {
+        /// <summary>
+        /// 根据实体类自动创建表
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public static void Create<T>() where T : class, new()
         {
             string tableModel = @"
             if not exists (select * from sysobjects where xtype='U' and name='{0}')
             begin
-                    CREATE TABLE {0} (
-                        ID uniqueidentifier primary key,
+                    CREATE TABLE {0} (                        
                         {1}
                     )
-            end;";
+            end;";//--ID uniqueidentifier primary key,
             Type type = typeof(T);
             PropertyInfo[] pArray = type.GetProperties();
             StringBuilder sb = new StringBuilder();
@@ -47,6 +49,7 @@ namespace WindowsFormsApp1.DBHelp
                         break;
                     case "System.Guid":
                         sb.Append(" uniqueidentifier");
+                        if (p.Name == "ID") sb.Append(" primary key");
                         break;
                     default:
                         sb.Append(" VARCHAR");

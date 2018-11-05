@@ -53,6 +53,7 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\Dto.cs" />
     <Compile Include="BLL\ScheduleAdapter.cs" />
     <Compile Include="ChartsForm.cs">
       <SubType>Form</SubType>
@@ -71,6 +72,7 @@
       <DependentUpon>IndexForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\BaseModel.cs" />
+    <Compile Include="Model\Record.cs" />
     <Compile Include="Model\Schedule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
