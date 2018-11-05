@@ -28,38 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.combYear = new System.Windows.Forms.ComboBox();
+            this.combMonth = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.combDays = new System.Windows.Forms.ComboBox();
+            this.lblInit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // combYear
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(83, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(107, 21);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 11, 2, 0, 0, 0, 0);
+            this.combYear.FormattingEnabled = true;
+            this.combYear.Location = new System.Drawing.Point(81, 38);
+            this.combYear.Name = "combYear";
+            this.combYear.Size = new System.Drawing.Size(76, 23);
+            this.combYear.TabIndex = 0;
+            // 
+            // combMonth
+            // 
+            this.combMonth.FormattingEnabled = true;
+            this.combMonth.Location = new System.Drawing.Point(239, 38);
+            this.combMonth.Name = "combMonth";
+            this.combMonth.Size = new System.Drawing.Size(75, 23);
+            this.combMonth.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 33);
+            this.label1.Location = new System.Drawing.Point(23, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Date";
+            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "年份：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(181, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "月份：";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(339, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "日期：";
+            // 
+            // combDays
+            // 
+            this.combDays.FormattingEnabled = true;
+            this.combDays.Location = new System.Drawing.Point(397, 38);
+            this.combDays.Name = "combDays";
+            this.combDays.Size = new System.Drawing.Size(75, 23);
+            this.combDays.TabIndex = 4;
+            // 
+            // lblInit
+            // 
+            this.lblInit.AutoSize = true;
+            this.lblInit.Location = new System.Drawing.Point(181, 322);
+            this.lblInit.Name = "lblInit";
+            this.lblInit.Size = new System.Drawing.Size(142, 15);
+            this.lblInit.TabIndex = 6;
+            this.lblInit.Text = "还没有计划？去安排";
+            this.lblInit.Click += new System.EventHandler(this.lblInit_Click);
             // 
             // ToDoList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 321);
+            this.ClientSize = new System.Drawing.Size(506, 691);
+            this.Controls.Add(this.lblInit);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.combDays);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.combMonth);
+            this.Controls.Add(this.combYear);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ToDoList";
-            this.Text = "ToDoList";
+            this.Text = "待办事项";
+            this.Load += new System.EventHandler(this.ToDoList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,7 +121,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox combYear;
+        private System.Windows.Forms.ComboBox combMonth;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox combDays;
+        private System.Windows.Forms.Label lblInit;
     }
 }

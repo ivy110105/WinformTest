@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             Common.InitDB();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IndexForm());
+            Application.Run(new ToDoList());
         }
     }
 }

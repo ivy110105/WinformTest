@@ -33,6 +33,7 @@ namespace WindowsFormsApp1.DBHelp
                     len = attr.FieldType;
 
                 sb.Append(p.Name);
+                var pt = p.PropertyType.ToString();
                 switch (p.PropertyType.ToString())
                 {
                     case "System.Int32":

@@ -20,13 +20,33 @@ namespace WindowsFormsApp1
 
         private void SchedulesForm_Load(object sender, EventArgs e)
         {
-            bind();
+            //bind();
+            init();
         }
 
         private void bind()
         {
             var list = ScheduleAdapter.Query();
 
+        }
+
+        private void init()
+        {
+            panelCustom.Visible = false;
+
+        }
+
+        private void rbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (((RadioButton)sender).Text)
+            {
+                case "自定义":
+                    panelCustom.Visible = true;
+                    break;
+                default:
+                    panelCustom.Visible = false;
+                    break;
+            }
         }
     }
 }

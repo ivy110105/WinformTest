@@ -54,5 +54,57 @@ namespace WindowsFormsApp1
             list.Add("years");
             return list;
         }
+
+        /// <summary>
+        /// 计划类型
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> PlanType()
+        {
+            List<string> list = new List<string>();
+            list.Add("工作");
+            list.Add("健身");
+            list.Add("阅读");
+            list.Add("饮食");
+            list.Add("作息");
+            return list;
+        }
+
+        public static List<int> Years()
+        {
+            List<int> list = new List<int>();
+
+            int loop = 3;
+            var currentYear = DateTime.Now.Year;
+            for (int i = currentYear + 1; i > currentYear - loop; i--)
+            {
+                list.Add(i);
+            }
+
+            return list;
+        }
+
+        public static List<int> Monthes()
+        {
+            List<int> list = new List<int>();
+
+            for (int i = 1; i < 13; i++)
+            {
+                list.Add(i);
+            }
+
+            return list;
+        }
+
+        public static List<int> Days(int year,int month)
+        {
+            List<int> list = new List<int>();
+            var days = DateTime.DaysInMonth(year, month);
+            for (int i = 1; i < days + 1; i++)
+            {
+                list.Add(i);
+            }
+            return list;
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace WindowsFormsApp1.DAL
                         paramvalue = value == null ? 0 : Convert.ToInt32(value);
                         break;
                     case "DateTime":
-                        paramvalue = value == null ? Convert.ToDateTime("1900-01-01 00:00:00") : Convert.ToDateTime(value);
+                        paramvalue = value == null ? new DateTime?() : Convert.ToDateTime(value);
                         break;
                     case "Boolean":
                         paramvalue = value == null ? false : Convert.ToBoolean(value);
