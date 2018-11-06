@@ -106,5 +106,14 @@ namespace WindowsFormsApp1
             }
             return list;
         }
+
+        public static List<string> ReadingType()
+        {
+            List<string> list = new List<string>();
+            list.Add("工作需求");
+            list.Add("陶冶情操");
+            list.Add("消磨时光");
+            return list;
+        }
     }
 }

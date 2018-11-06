@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
-            Common.InitDB();
+            //Common.InitDB();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ToDoList());
