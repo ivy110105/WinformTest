@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using WindowsFormsApp1.BLL;
+using WindowsFormsApp1.Controls;
+using static WindowsFormsApp1.DataGridViewEx;
 
 namespace WindowsFormsApp1
 {
@@ -32,12 +35,29 @@ namespace WindowsFormsApp1
 
         private void init()
         {
+            initWork();
             initGym();
             initReading();
         }
 
         #region 工作
 
+        private void initWork()
+        {
+
+            DataSet ds = new DataSet();
+            DataTable dt1 = source();dt1.TableName = "T1";
+            DataTable dt2 = source();dt2.TableName = "T2";
+            ds.Tables.AddRange(new DataTable[] { dt1, dt2 });
+            //这是对应关系的时候主键必须唯一
+            ds.Relations.Add("1", ds.Tables["T1"].Columns["序号"], ds.Tables["T2"].Columns["序号"]);
+
+            MasterControl masterDetail;
+
+            masterDetail = new MasterControl(ds, controlType.middle);
+            panel1.Controls.Add(masterDetail);
+
+        }
         private void picWorkSub_Click(object sender, EventArgs e)
         {
             var index = listboxWorkSub.Items.Count + 1;
@@ -163,5 +183,40 @@ namespace WindowsFormsApp1
 
         #endregion
 
+        private void dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var dgv = (DataGridView)sender;
+            DataGridViewRow CurrentRow = dgv.Rows[e.RowIndex];
+            CurrentRow.HeaderCell.Value = Convert.ToString(e.RowIndex + 1);//显示行号，也可以设置成显示其他信息
+            CurrentRow.HeaderCell.ToolTipText = "";//设置提示信息
+            //CurrentRow.HeaderCell
+        }
+
+        private DataTable source()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("序号");
+            dt.Columns.Add("名称");
+            dt.Columns.Add("优先级");
+
+            for (int i = 0; i < 20; i++)
+            {
+                DataRow dr = dt.NewRow();
+                dr["序号"] = i + 1;
+                dr["名称"] = "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu";
+                dr["优先级"] = "ttttttttt";
+                dt.Rows.Add(dr);
+            }
+
+            return dt;
+        }
+
+        private void dgv1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var dgv = (DataGridViewEx)sender;
+            DataGridViewRow CurrentRow = dgv.Rows[e.RowIndex];
+            CurrentRow.HeaderCell.Value = Convert.ToString(e.RowIndex + 1);//显示行号，也可以设置成显示其他信息
+            CurrentRow.HeaderCell.ToolTipText = "";//设置提示信息
+        }
     }
 }

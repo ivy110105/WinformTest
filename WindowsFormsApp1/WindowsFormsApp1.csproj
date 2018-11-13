@@ -33,9 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +48,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseForm.cs">
@@ -62,7 +66,20 @@
       <DependentUpon>ChartsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common.cs" />
+    <Compile Include="Controls\CellStyle.cs" />
+    <Compile Include="Controls\DetailControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DetailControl.Designer.cs">
+      <DependentUpon>DetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MasterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\DB.cs" />
+    <Compile Include="DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DBHelp\CreateTables.cs" />
     <Compile Include="DBHelp\SQLHelper.cs" />
     <Compile Include="IndexForm.cs">
@@ -112,6 +129,9 @@
     <Compile Include="ToDoList.Designer.cs">
       <DependentUpon>ToDoList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\MasterControl.resx">
+      <DependentUpon>MasterControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IndexForm.resx">
       <DependentUpon>IndexForm.cs</DependentUpon>
     </EmbeddedResource>
